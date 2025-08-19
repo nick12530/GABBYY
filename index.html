@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicholas Gabriel - Full Stack Developer & UI/UX Designer</title>
+    <meta name="description" content="Ultra-modern portfolio of Nicholas Gabriel — Full Stack Developer & UI/UX Designer. Clean, minimal, glassmorphic design with interactive project gallery.">
+    <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta property="og:title" content="Nicholas Gabriel — Portfolio">
+    <meta property="og:description" content="Futuristic yet professional portfolio with interactive gallery and dark/light modes.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="profile.jpg">
+    <meta property="og:image:alt" content="Portrait of Nicholas Gabriel">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="profile.jpg" imagesrcset="profile.jpg 1x" imagesizes="(max-width: 600px) 200px, 280px">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nicholas Gabriel",
+      "url": "",
+      "jobTitle": "Full Stack Developer & UI/UX Designer",
+      "image": "profile.jpg"
+    }
+    </script>
 </head>
 <body>
     <header id="header">
@@ -97,20 +117,29 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Work Showcase</h2>
                 <p class="section-subtitle">Explore my latest work and creative solutions</p>
             </div>
-            <div class="project-filter">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="app">Mobile Apps</button>
-                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+            <div class="gallery-controls">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="app">Apps</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                </div>
+                <div class="utilities">
+                    <input type="search" id="projectSearch" class="search-input" placeholder="Search projects..." aria-label="Search projects">
+                    <div class="layout-toggle" role="group" aria-label="Layout">
+                        <button class="layout-btn active" data-layout="comfortable" title="Comfortable"><i class="fas fa-border-all"></i></button>
+                        <button class="layout-btn" data-layout="compact" title="Compact"><i class="fas fa-th"></i></button>
+                    </div>
+                </div>
             </div>
-            <div class="project-grid">
+            <div class="project-grid" id="projectGrid" aria-live="polite">
                 <!-- Web Development Project -->
                 <div class="project-card" data-category="web">
                     <div class="project-img">
-                        <img src="SkyPort.png" alt="Airport Management System">
+                        <img src="SkyPort.png" alt="Airport Management System" loading="lazy" decoding="async">
                         <div class="project-overlay">
                             <div class="project-actions">
                                 <a href="#" class="project-link" title="Live Demo">
@@ -138,7 +167,7 @@
                 <!-- App Development Project -->
                 <div class="project-card" data-category="app">
                     <div class="project-img">
-                        <img src="Vogue.jpg" alt="Vogue Shopping App">
+                        <img src="Vogue.jpg" alt="Vogue Shopping App" loading="lazy" decoding="async">
                         <div class="project-overlay">
                             <div class="project-actions">
                                 <a href="#" class="project-link" title="Live Demo">
@@ -166,7 +195,7 @@
                 <!-- Graphic Design Project -->
                 <div class="project-card" data-category="design">
                     <div class="project-img">
-                        <img src="design.jpg" alt="Brand Identity Design">
+                        <img src="design.jpg" alt="Brand Identity Design" loading="lazy" decoding="async">
                         <div class="project-overlay">
                             <div class="project-actions">
                                 <a href="#" class="project-link" title="View Portfolio">
